@@ -53,7 +53,7 @@ spec:
           readOnly: true
           subPath: elasticsearch.yml
         - name: storage
-          mountPath: /data
+          mountPath: /usr/share/elasticsearch/data
       volumes:
       - name: config
         configMap:

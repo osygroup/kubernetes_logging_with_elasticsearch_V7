@@ -42,7 +42,7 @@ spec:
           readOnly: true
           subPath: elasticsearch.yml
         - name: elasticsearch-data-persistent-storage
-          mountPath: /data/db
+          mountPath: /usr/share/elasticsearch/data
       volumes:
       - name: config
         configMap:
