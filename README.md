@@ -89,3 +89,6 @@ helm upgrade --install curator curator -n curator  OR
 helm upgrade --install curator ./curator -n curator 
 
 The cron job will run as per set in the values.yaml file of the chart, deleting the old Fluentd indices.
+
+
+### NOTE: This documentation is for development purposes. To use this setup for production, please mount a PV to the "storage" mountPath (/usr/share/elasticsearch/data) for the master and client nodes. The size of the PVs can be as small as 0.1Gi, since indices (logs) are not stored on these nodes. The PV will help to permanently store the data that the master and client nodes need to stay in sync with the data node. The master node actually manages the syncing of the nodes in the Elasticsearch cluster. Once the master node loses its data, all the nodes will be out of sync, and the stack crashes.
